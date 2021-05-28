@@ -14,6 +14,8 @@ for dir in ['train', 'test', 'valid']:
         files.remove(file)
         ignored_files += image_path + file + '\n'
         ignored_files += text_path + file[:-3] + 'txt\n'
+        os.remove(image_path + file)
+        os.remove(text_path + file[:-3] + 'txt')
         total += 1
 
 print(total)
